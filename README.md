@@ -18,6 +18,7 @@
   - String sort - [&#128279;](shorting_algorithms/bubble_sort.cpp#L42)
 
 **What is this?**
+
 Bubble sort, aka sinking sort is a basic algorithm for arranging a string of numbers or other elements in the correct order. This sorting algorithm is comparison-based algorithm in which each pair of adjacent elements is compared and the elements are swapped if they are not in order. The algorithm then repeats this process until it can run through the entire string or other elements and find no two elements that need to be swapped. This algorithm is not suitable for large data sets as its average and worst case complexity are of Ο(n^2^) where n is the number of items.
 
 **In general**, Just like the movement of air bubbles in the water that rise up to the surface, each element of the array move to the end in each iteration. Therefore, it is called a bubble sort.
@@ -47,7 +48,7 @@ To demonstrate lets take an unordered array of number with 5 elements
 int array[10] = { 5, 10, 7, 9, 2}
 ```
 
-Lets close look to the elements of the array
+Let's close look to the elements of the array
 
 |   index   | 0   | 1   | 2   | 3   | 4   |
 |:---------:|-----|-----|-----|-----|-----|
@@ -89,7 +90,7 @@ Then we move to the next two values, **11** and **2**.
 |:---------:|-----|-----|-----|--------|-------|
 | **value** | 5   | 7   | 10  | **11** | **2** |
 
-We know then that **2** is smaller **11**. Hence they are not sorted.
+We know then that **2** is smaller **11**. Hence, they are not sorted.
 
 |   index   | 0   | 1   | 2   | 3      | 4     |
 |:---------:|-----|-----|-----|--------|-------|
@@ -122,6 +123,7 @@ And when there's no swap required, bubble sorts learns that an array is complete
 Now we should look into some practical aspects of bubble sort.
 
 **Algorithm**
+
 We assume list is an array of n elements. We further assume that swap function swaps the values of the given array elements.
 
 ```dsa
@@ -139,6 +141,7 @@ end BubbleSort
 ```
 
 **Pseudocode**
+
 In pseudocode the algorithm can be expressed as (0-based array):
 
 ```pascal
