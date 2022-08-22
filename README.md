@@ -1,7 +1,5 @@
 # Algorithms [![C++ Logo](/utilities/images/C++_Logo_x36.png "C++ Logo")](https://isocpp.org/get-started)
 
----
-
 ## This repository contains
 
 - [Sorting algorithm](#sorting-algorithm)
