@@ -13,8 +13,8 @@ std::string long_array_string[5000] = {"bind", "eggnog", "succeed", "allow", "fi
 // Code starts
 void bubble_sort(int arr[], int arrSz, string order = "Ascending")
 {
-    int rounds = 0;
-    int swaps = 0;
+    int rounds = 0; // Calculate how many iteration it take to sort the array -> arr[]
+    int swaps = 0;  // Calculate how many swap needs to sort the array -> arr[]
     for (int i = 0; i < arrSz; i++)
     {
         rounds++;
