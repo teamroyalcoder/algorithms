@@ -1,11 +1,11 @@
-# Algorithms [![An old rock in the desert](/utilities/images/C++_Logo_x36.png "C++ Logo")](https://isocpp.org/get-started)
+# Algorithms [![C++ Logo](/utilities/images/C++_Logo_x36.png "C++ Logo")](https://isocpp.org/get-started)
 
 ---
 
 ## This repository contains
 
-- [Sorting algorithms](#sort_algo)
-  - [Bubble sort](#sort_algo-bubble)
+- [Sorting algorithm](#sorting-algorithm)
+  - [Bubble sort](#bubble-sort)
 
 ---
 
@@ -23,22 +23,23 @@ Bubble sort, aka sinking sort is a basic algorithm for arranging a string of num
 **In general**, Just like the movement of air bubbles in the water that rise up to the surface, each element of the array move to the end in each iteration. Therefore, it is called a bubble sort.
 
 **How Bubble Sort Works?**
->*In short*
+
+> *In short*
 
 Suppose we are trying to sort the elements in ascending order.
 
 1. First Iteration (Compare and Swap)
-   1. Starting from the first index, compare the first and the second elements.
-   2. If the first element is greater than the second element, they are swapped.
-   3. Now, compare the second and the third elements. Swap them if they are not in order.
-   4. The above process goes on until the last element.
+    1. Starting from the first index, compare the first and the second elements.
+    2. If the first element is greater than the second element, they are swapped.
+    3. Now, compare the second and the third elements. Swap them if they are not in order.
+    4. The above process goes on until the last element.
 2. Remaining Iteration
-    The same process goes on for the remaining iterations.
-    After each iteration, the largest element among the unsorted elements is placed at the end.
-    In each iteration, the comparison takes place up to the last unsorted element.
-    The array is sorted when all the unsorted elements are placed at their correct positions.
+   The same process goes on for the remaining iterations.
+   After each iteration, the largest element among the unsorted elements is placed at the end.
+   In each iteration, the comparison takes place up to the last unsorted element.
+   The array is sorted when all the unsorted elements are placed at their correct positions.
 
->*In details*
+> *In details*
 
 To demonstrate lets take an unordered array of number with 5 elements
 
@@ -47,75 +48,76 @@ int array[10] = { 5, 10, 7, 9, 2}
 ```
 
 Lets close look to the elements of the array
-|  index  |0  |1  |2  |3  |4  |
-|  :---:  |---|---|---|---|---|
-|**value**|5  |10 |7  |11 |2  |
+
+|   index   | 0   | 1   | 2   | 3   | 4   |
+|:---------:|-----|-----|-----|-----|-----|
+| **value** | 5   | 10  | 7   | 11  | 2   |
 
 Bubble sort starts with very first two elements, comparing them to check which one is greater.
 
-|  index  |0    |1     |2  |3  |4  |
-|  :---:  | --- | ---- |---|---|---|
-|**value**|==5==|==10==|7  |11 |2  |
+|   index   | 0     | 1      | 2   | 3   | 4   |
+|:---------:|-------|--------|-----|-----|-----|
+| **value** | **5** | **10** | 7   | 11  | 2   |
 
-In this case, value ==10== is greater ==5==, so it is already in sorted locations. Next, we compare ==10== with ==7==.
+In this case, value **10** is greater **5**, so it is already in sorted locations. Next, we compare **10** with **7**.
 
-|  index  |0  |1     |2    |3  |4  |
-|  :---:  |---| ---- | --- |---|---|
-|**value**|5  |==10==|==7==|11 |2  |
+|   index   | 0   | 1      | 2     | 3   | 4   |
+|:---------:|-----|--------|-------|-----|-----|
+| **value** | 5   | **10** | **7** | 11  | 2   |
 
-We find that ==7== is smaller than ==10== and these two values must be swapped :arrows_counterclockwise:
+We find that **7** is smaller than **10** and these two values must be swapped :arrows_counterclockwise:
 
-|  index  |0  |1         |2        |3  |4  |
-|  :---:  |---| -------- | ------- |---|---|
-|**value**|5  |==**10**==|==**7**==|11 |2  |
+|   index   | 0   | 1      | 2     | 3   | 4   |
+|:---------:|-----|--------|-------|-----|-----|
+| **value** | 5   | **10** | **7** | 11  | 2   |
 
 The new array should look like this −
 
-|  index  |0  |1  |2   |3  |4  |
-|  :---:  |---|---|----|---|---|
-|**value**|5  |*7*|*10*|11 |2  |
+|   index   | 0   | 1   | 2    | 3   | 4   |
+|:---------:|-----|-----|------|-----|-----|
+| **value** | 5   | _7_ | _10_ | 11  | 2   |
 
-Next we compare ==10== and ==11==. We find that both are in already sorted positions.
+Next we compare **10** and **11**. We find that both are in already sorted positions.
 
-|  index  |0  |1  |2     |3     |4  |
-|  :---:  |---|---| ---- | ---- |---|
-|**value**|5  |7  |==10==|==11==|2  |
+|   index   | 0   | 1   | 2      | 3      | 4   |
+|:---------:|-----|-----|--------|--------|-----|
+| **value** | 5   | 7   | **10** | **11** | 2   |
 
-Then we move to the next two values, ==11== and ==2==.
+Then we move to the next two values, **11** and **2**.
 
-|  index  |0  |1  |2  |3     |4    |
-|  :---:  |---|---|---| ---- | --- |
-|**value**|5  |7  |10 |==11==|==2==|
+|   index   | 0   | 1   | 2   | 3      | 4     |
+|:---------:|-----|-----|-----|--------|-------|
+| **value** | 5   | 7   | 10  | **11** | **2** |
 
-We know then that ==2== is smaller ==11==. Hence they are not sorted.
+We know then that **2** is smaller **11**. Hence they are not sorted.
 
-|  index  |0  |1  |2  |3     |4    |
-|  :---:  |---|---|---| ---- | --- |
-|**value**|5  |7  |10 |==11==|==2==|
+|   index   | 0   | 1   | 2   | 3      | 4     |
+|:---------:|-----|-----|-----|--------|-------|
+| **value** | 5   | 7   | 10  | **11** | **2** |
 
 We swap these values. We find that we have reached the end of the array. After one iteration, the array should look like this −
 
-|  index  |0  |1  |2  |3  |4     |
-|  :---:  |---|---|---|---| ---- |
-|**value**|5  |7  |10 |2  |==11==|
+|   index   | 0   | 1   | 2   | 3   | 4      |
+|:---------:|-----|-----|-----|-----|--------|
+| **value** | 5   | 7   | 10  | 2   | **11** |
 
 To be precise, we are now showing how an array should look like after each iteration. After the second iteration, it should look like this −
 
-|  index  |0  |1  |2  |3     |4     |
-|  :---:  |---|---|---| ---- | ---- |
-|**value**|5  |7  |2  |==10==|==11==|
+|   index   | 0   | 1   | 2   | 3      | 4      |
+|:---------:|-----|-----|-----|--------|--------|
+| **value** | 5   | 7   | 2   | **10** | **11** |
 
 Notice that after each iteration, at least one value moves at the end.
 
-|  index  |0  |1  |2    |3     |4     |
-|  :---:  |---|---| --- | ---- | ---- |
-|**value**|5  |2  |==7==|==10==|==11==|
+|   index   | 0   | 1   | 2     | 3      | 4      |
+|:---------:|-----|-----|-------|--------|--------|
+| **value** | 5   | 2   | **7** | **10** | **11** |
 
 And when there's no swap required, bubble sorts learns that an array is completely sorted.
 
-|  index  |0    |1    |2    |3     |4     |
-|  :---:  | --- | --- | --- | ---- | ---- |
-|**value**|==2==|==5==|==7==|==10==|==11==|
+|   index   | 0     | 1     | 2     | 3      | 4      |
+|:---------:|-------|-------|-------|--------|--------|
+| **value** | **2** | **5** | **7** | **10** | **11** |
 
 Now we should look into some practical aspects of bubble sort.
 
