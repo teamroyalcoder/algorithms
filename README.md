@@ -9,9 +9,9 @@
 
 ---
 
-### Sorting algorithm
+## Sorting algorithm
 
-#### Bubble sort
+### Bubble sort
 
 - Code snippets
   - Integer sort - [&#128279;](shorting_algorithms/bubble_sort.cpp#L17)
