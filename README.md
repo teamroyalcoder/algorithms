@@ -3,7 +3,7 @@
 ## This repository contains
 
 - [Sorting algorithm](#sorting-algorithm)
-  - [Bubble sort](#-bubble-sort)
+  - [Bubble sort](#bubble-sort)
 
 ---
 
@@ -21,7 +21,7 @@ For optimum efficiency, the input data should be stored in a data structure whic
 
 ---
 
-### &bull; Bubble sort
+### Bubble sort
 
 - Code snippets
   - Integer sort - [&#128279;](shorting_algorithms/bubble_sort.cpp#L20)
