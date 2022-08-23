@@ -3,7 +3,8 @@
 ## This repository contains
 
 - [Sorting algorithm](#sorting-algorithm)
-  - [Bubble sort](#bubble-sort)
+  - [Bubble Sort](#bubble-sort)
+  - [Optimized Bubble Sort](#optimized-bubble-sort)
 
 ---
 
