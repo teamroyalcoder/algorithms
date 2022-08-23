@@ -21,7 +21,7 @@ For optimum efficiency, the input data should be stored in a data structure whic
 
 ---
 
-### Bubble sort
+### Bubble Sort
 
 - Code snippets
   - Integer sort - [&#128279;](shorting_algorithms/bubble_sort.cpp#L20)
@@ -203,3 +203,9 @@ end procedure
 </details>
 
 ---
+
+### Optimized Bubble Sort
+
+- Code snippets
+  - Integer sort - [&#128279;](shorting_algorithms/optimized_bubble_sort.cpp#L20)
+  - String sort - [&#128279;](shorting_algorithms/optimized_bubble_sort.cpp#L51)

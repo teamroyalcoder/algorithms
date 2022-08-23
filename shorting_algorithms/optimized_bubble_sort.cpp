@@ -17,13 +17,14 @@ char long_array_string[5000][MAX_CHAR] = {"bind", "eggnog", "succeed", "allow", 
 
 // Code starts
 // To short integer
-void bubbleSortInt(int arr[], size_t arrSz, string order = "Ascending")
+void oprimizedBubbleSortInt(int arr[], size_t arrSz, string order = "Ascending")
 {
     int rounds = 0; // Calculate how many iteration it take to sort the array -> arr[]
     int swaps = 0;  // Calculate how many swap needs to sort the array -> arr[]
     for (int i = 0; i < arrSz; i++)
     {
         rounds++;
+        bool flag = false;
         for (int j = 0; j < (arrSz - i - 1); j++)
         {
             // Swaping process
@@ -31,10 +32,15 @@ void bubbleSortInt(int arr[], size_t arrSz, string order = "Ascending")
             {
                 // Swaping process
                 swaps++;
+                flag = true;
                 int temp = arr[j]; // Temporary array
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
             }
+        }
+        if (!flag)
+        {
+            break;
         }
     }
     cout << "Rounds needed - " << rounds << endl;
@@ -42,24 +48,30 @@ void bubbleSortInt(int arr[], size_t arrSz, string order = "Ascending")
 }
 
 // To short string
-void bubbleSortString(char arr[][MAX_CHAR], size_t arrSz, string order = "Ascending")
+void optimizedBubbleSortString(char arr[][MAX_CHAR], size_t arrSz, string order = "Ascending")
 {
     int rounds = 0; // Calculate how many iteration it take to sort the array -> arr[]
     int swaps = 0;  // Calculate how many swap needs to sort the array -> arr[]
     for (int i = 0; i < arrSz; i++)
     {
         rounds++;
+        bool flag = false;
         for (int j = 0; j < (arrSz - i - 1); j++)
         {
             // Swaping process
             if ((order == "Descending") ? strcmp(arr[j], arr[j + 1]) < 0 : strcmp(arr[j], arr[j + 1]) > 0)
             {
                 swaps++;
+                flag = true;
                 char temp[MAX_CHAR]; // Temporary array
                 strcpy(temp, arr[j]);
                 strcpy(arr[j], arr[j + 1]);
                 strcpy(arr[j + 1], temp);
             }
+        }
+        if (!flag)
+        {
+            break;
         }
     }
     cout << "Rounds needed - " << rounds << endl;
@@ -75,14 +87,14 @@ void copyCharMatrixArray(char (&arrayA)[ARRAY_SIZE][MAX_CHAR], const char (&arra
 int main()
 {
     // Definig some extras
-    string algo = "Bubble sort";          // Algorithm name
-    string usedArray = "user";            // Which array should we use. Predefined or User Generated. Default value is "user", can be set to "pre"
-    string dataType = "integer";          // Which datatype should we sort. Default value is "integer", can be set to "string"
-    const size_t array_size = ARRAY_SIZE; // The size of array. If you use predefined array then take a close look of those array to find out array size (#L14 or #L16) and define to the top (#L9)
-    string array_size_text = "short";     // If you are using predefined array then determine if the array you want to use short or long. Default value is "short", can be set to "long"
-    string order = "Ascending";           // Define how you want to order the array Ascending or Descending. Default value is "Ascending", can be set to "Descending"
-    int integers[array_size];             // integer array that we will sort
-    char strings[array_size][MAX_CHAR];   // string array that we will sort
+    string algo = "Optimized Bubble sort"; // Algorithm name
+    string usedArray = "user";             // Which array should we use. Predefined or User Generated. Default value is "user", can be set to "pre"
+    string dataType = "integer";           // Which datatype should we sort. Default value is "integer", can be set to "string"
+    const size_t array_size = ARRAY_SIZE;  // The size of array. If you use predefined array then take a close look of those array to find out array size (#L14 or #L16) and define to the top (#L9)
+    string array_size_text = "short";      // If you are using predefined array then determine if the array you want to use short or long. Default value is "short", can be set to "long"
+    string order = "Ascending";            // Define how you want to order the array Ascending or Descending. Default value is "Ascending", can be set to "Descending"
+    int integers[array_size];              // integer array that we will sort
+    char strings[array_size][MAX_CHAR];    // string array that we will sort
 
     // Creating the array to test our sorting algorithm
     if (usedArray == "user")
@@ -146,7 +158,7 @@ int main()
     cout << endl;
 
     // Secondly we order the array
-    dataType == "integer" ? bubbleSortInt(integers, array_size, order) : bubbleSortString(strings, array_size, order);
+    dataType == "integer" ? oprimizedBubbleSortInt(integers, array_size, order) : optimizedBubbleSortString(strings, array_size, order);
 
     cout << endl;
 
