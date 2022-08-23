@@ -55,21 +55,21 @@ Let's close look to the elements of the array
 
 Bubble sort starts with very first two elements, comparing them to check which one is greater.
 
-|   index   | 0              | 1               | 2   | 3   | 4   |
-|:---------:|----------------|-----------------|-----|-----|-----|
-| **value** | <mark>5</mark> | <mark>10</mark> | 7   | 11  | 2   |
+|   index   | 0                  | 1                   | 2   | 3   | 4   |
+|:---------:|--------------------|---------------------|-----|-----|-----|
+| **value** | <mark>**5**</mark> | <mark>**10**</mark> | 7   | 11  | 2   |
 
-In this case, value <mark>10</mark> is greater <mark>5</mark>, so it is already in sorted locations. Next, we compare <mark>10</mark> with <mark>7</mark>.
+In this case, value <mark>**10**</mark> is greater <mark>**5**</mark>, so it is already in sorted locations. Next, we compare <mark>**10**</mark> with <mark>**7**</mark>.
 
-|   index   | 0   | 1               | 2              | 3   | 4   |
-|:---------:|-----|-----------------|----------------|-----|-----|
-| **value** | 5   | <mark>10</mark> | <mark>7</mark> | 11  | 2   |
+|   index   | 0   | 1                   | 2                  | 3   | 4   |
+|:---------:|-----|---------------------|--------------------|-----|-----|
+| **value** | 5   | <mark>**10**</mark> | <mark>**7**</mark> | 11  | 2   |
 
-We find that <mark>7</mark> is smaller than <mark>10</mark> and these two values must be swapped :arrows_counterclockwise:
+We find that <mark>**7**</mark> is smaller than <mark>**10**</mark> and these two values must be swapped :arrows_counterclockwise:
 
-|   index   | 0   | 1               | 2              | 3   | 4   |
-|:---------:|-----|-----------------|----------------|-----|-----|
-| **value** | 5   | <mark>10</mark> | <mark>7</mark> | 11  | 2   |
+|   index   | 0   | 1                   | 2                  | 3   | 4   |
+|:---------:|-----|---------------------|--------------------|-----|-----|
+| **value** | 5   | <mark>**10**</mark> | <mark>**7**</mark> | 11  | 2   |
 
 The new array should look like this −
 
@@ -77,47 +77,47 @@ The new array should look like this −
 |:---------:|-----|-----|------|-----|-----|
 | **value** | 5   | _7_ | _10_ | 11  | 2   |
 
-Next we compare <mark>10</mark> and <mark>11</mark>. We find that both are in already sorted positions.
+Next we compare <mark>**10**</mark> and <mark>**11**</mark>. We find that both are in already sorted positions.
 
-|   index   | 0   | 1   | 2               | 3               | 4   |
-|:---------:|-----|-----|-----------------|-----------------|-----|
-| **value** | 5   | 7   | <mark>10</mark> | <mark>11</mark> | 2   |
+|   index   | 0   | 1   | 2                   | 3                   | 4   |
+|:---------:|-----|-----|---------------------|---------------------|-----|
+| **value** | 5   | 7   | <mark>**10**</mark> | <mark>**11**</mark> | 2   |
 
-Then we move to the next two values, <mark>11</mark> and <mark>2</mark>.
+Then we move to the next two values, <mark>**11**</mark> and <mark>**2**</mark>.
 
-|   index   | 0   | 1   | 2   | 3               | 4              |
-|:---------:|-----|-----|-----|-----------------|----------------|
-| **value** | 5   | 7   | 10  | <mark>11</mark> | <mark>2</mark> |
+|   index   | 0   | 1   | 2   | 3                   | 4                  |
+|:---------:|-----|-----|-----|---------------------|--------------------|
+| **value** | 5   | 7   | 10  | <mark>**11**</mark> | <mark>**2**</mark> |
 
-We know then that <mark>2</mark> is smaller <mark>11</mark>. Hence, they are not sorted.
+We know then that <mark>**2**</mark> is smaller <mark>**11**</mark>. Hence, they are not sorted.
 
-|   index   | 0   | 1   | 2   | 3               | 4              |
-|:---------:|-----|-----|-----|-----------------|----------------|
-| **value** | 5   | 7   | 10  | <mark>11</mark> | <mark>2</mark> |
+|   index   | 0   | 1   | 2   | 3                   | 4                  |
+|:---------:|-----|-----|-----|---------------------|--------------------|
+| **value** | 5   | 7   | 10  | <mark>**11**</mark> | <mark>**2**</mark> |
 
 We swap these values. We find that we have reached the end of the array. After one iteration, the array should look like this −
 
-|   index   | 0   | 1   | 2   | 3   | 4               |
-|:---------:|-----|-----|-----|-----|-----------------|
-| **value** | 5   | 7   | 10  | 2   | <mark>11</mark> |
+|   index   | 0   | 1   | 2   | 3   | 4                   |
+|:---------:|-----|-----|-----|-----|---------------------|
+| **value** | 5   | 7   | 10  | 2   | <mark>**11**</mark> |
 
 To be precise, we are now showing how an array should look like after each iteration. After the second iteration, it should look like this −
 
-|   index   | 0   | 1   | 2   | 3               | 4               |
-|:---------:|-----|-----|-----|-----------------|-----------------|
-| **value** | 5   | 7   | 2   | <mark>10</mark> | <mark>11</mark> |
+|   index   | 0   | 1   | 2   | 3                   | 4                   |
+|:---------:|-----|-----|-----|---------------------|---------------------|
+| **value** | 5   | 7   | 2   | <mark>**10**</mark> | <mark>**11**</mark> |
 
 Notice that after each iteration, at least one value moves at the end.
 
-|   index   | 0   | 1   | 2              | 3               | 4               |
-|:---------:|-----|-----|----------------|-----------------|-----------------|
-| **value** | 5   | 2   | <mark>7</mark> | <mark>10</mark> | <mark>11</mark> |
+|   index   | 0   | 1   | 2                  | 3                   | 4                   |
+|:---------:|-----|-----|--------------------|---------------------|---------------------|
+| **value** | 5   | 2   | <mark>**7**</mark> | <mark>**10**</mark> | <mark>**11**</mark> |
 
 And when there's no swap required, bubble sorts learns that an array is completely sorted.
 
-|   index   | 0              | 1              | 2              | 3               | 4               |
-|:---------:|----------------|----------------|----------------|-----------------|-----------------|
-| **value** | <mark>2</mark> | <mark>5</mark> | <mark>7</mark> | <mark>10</mark> | <mark>11</mark> |
+|   index   | 0                  | 1                  | 2                  | 3                   | 4                   |
+|:---------:|--------------------|--------------------|--------------------|---------------------|---------------------|
+| **value** | <mark>**2**</mark> | <mark>**5**</mark> | <mark>**7**</mark> | <mark>**10**</mark> | <mark>**11**</mark> |
 
 Now we should look into some practical aspects of bubble sort.
 
