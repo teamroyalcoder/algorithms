@@ -87,7 +87,7 @@ void copyCharMatrixArray(char (&arrayA)[ARRAY_SIZE][MAX_CHAR], const char (&arra
 int main()
 {
     // Definig some extras
-    string algo = "Optimized Bubble sort"; // Algorithm name
+    string algo = "Optimized Bubble Sort"; // Algorithm name
     string usedArray = "user";             // Which array should we use. Predefined or User Generated. Default value is "user", can be set to "pre"
     string dataType = "integer";           // Which datatype should we sort. Default value is "integer", can be set to "string"
     const size_t array_size = ARRAY_SIZE;  // The size of array. If you use predefined array then take a close look of those array to find out array size (#L14 or #L16) and define to the top (#L9)
