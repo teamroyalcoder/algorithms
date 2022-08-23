@@ -3,7 +3,7 @@
 ## This repository contains
 
 - [Sorting algorithm](#sorting-algorithm)
-  - [Bubble sort](#bubble-sort)
+  - [Bubble sort](#-bubble-sort)
 
 ---
 
