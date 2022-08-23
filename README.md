@@ -9,19 +9,38 @@
 
 ## Sorting algorithm
 
-### Bubble sort
+In computer science, a sorting algorithm is an algorithm that puts elements of a list into an order. The most frequently used orders are numerical order and lexicographical order, and either ascending or descending. Efficient sorting is important for optimizing the efficiency of other algorithms (such as search and merge algorithms) that require input data to be in sorted lists. Sorting is also often useful for canonicalizing data and for producing human-readable output.
+
+Formally, the output of any sorting algorithm must satisfy two conditions:
+- The output is in monotonic order (each element is no smaller/larger than the previous element, according to the required order).
+- The output is a permutation (a reordering, yet retaining all of the original elements) of the input.
+
+For optimum efficiency, the input data should be stored in a data structure which allows random access rather than one that allows only sequential access. 
+
+## Let's talk about some sorting algorithm
+
+---
+
+### &bull; Bubble sort
 
 - Code snippets
   - Integer sort - [&#128279;](shorting_algorithms/bubble_sort.cpp#L20)
   - String sort - [&#128279;](shorting_algorithms/bubble_sort.cpp#L45)
 
-**What is this?**
+<details>
+<summary>Explore more about Bubble sort</summary>
+
+<details>
+<summary><b>What is this?</b></summary>
 
 Bubble sort, aka sinking sort is a basic algorithm for arranging a string of numbers or other elements in the correct order. This sorting algorithm is comparison-based algorithm in which each pair of adjacent elements is compared and the elements are swapped if they are not in order. The algorithm then repeats this process until it can run through the entire string or other elements and find no two elements that need to be swapped. This algorithm is not suitable for large data sets as its average and worst case complexity are of Ο(n<sup>2</sub>) where n is the number of items.
 
 **In general**, Just like the movement of air bubbles in the water that rise up to the surface, each element of the array move to the end in each iteration. Therefore, it is called a bubble sort.
 
-**How Bubble Sort Works?**
+</details>
+
+<details>
+<summary><b>How Bubble Sort Works?</b></summary>
 
 > *In short*
 
@@ -119,9 +138,13 @@ And when there's no swap required, bubble sorts learns that an array is complete
 |:---------:|--------------------|--------------------|--------------------|---------------------|---------------------|
 | **value** | <mark>**2**</mark> | <mark>**5**</mark> | <mark>**7**</mark> | <mark>**10**</mark> | <mark>**11**</mark> |
 
-Now we should look into some practical aspects of bubble sort.
+</details>
 
-**Algorithm**
+<details>
+<summary>Now we should look into some practical aspects of bubble sort.</summary>
+
+<details>
+<summary><b>Algorithm</b></summary>
 
 We assume list is an array of n elements. We further assume that swap function swaps the values of the given array elements.
 
@@ -139,7 +162,10 @@ begin BubbleSort(list)
 end BubbleSort
 ```
 
-**Pseudocode**
+</details>
+
+<details>
+<summary><b>Pseudocode</b></summary>
 
 In pseudocode the algorithm can be expressed as **(0-based array)**:
 
@@ -160,11 +186,20 @@ procedure bubbleSort(A : list of sortable items)
 end procedure
 ```
 
-**Time and Space** complexity for the Bubble Sort algorithm
+</details>
+
+</details>
+
+<details>
+<summary><b>Time and Space</b> complexity for the Bubble Sort algorithm</summary>
 
 - **Worst** Case Time Complexity **[ Big-O ]**: **O(n<sup>2</sup>)**
 - **Best** Case Time Complexity **[Big-omega]**: **O(n)**
 - **Average** Time Complexity **[Big-theta]**: **O(n<sup>2</sup>)**
 - **Space** Complexity: **O(1)**
+
+</details>
+
+</details>
 
 ---
