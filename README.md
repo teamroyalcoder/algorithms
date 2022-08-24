@@ -14,7 +14,7 @@ In computer science, a sorting algorithm is an algorithm that puts elements of a
 
 Formally, the output of any sorting algorithm must satisfy two conditions:
 - The output is in monotonic order (each element is no smaller/larger than the previous element, according to the required order).
-- The output is a permutation (a reordering, yet retaining all of the original elements) of the input.
+- The output is a permutation (a reordering, yet retaining all the original elements) of the input.
 
 For optimum efficiency, the input data should be stored in a data structure which allows random access rather than one that allows only sequential access. 
 
