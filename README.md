@@ -2,6 +2,8 @@
 
 ## This repository contains
 
+_To take the benefit of bellow link there's no useful way 😜, to reduce the space I had to do this._
+
 - [Sorting algorithm](#sorting-algorithm)
   - [Exchange Sort](#exchange-sort) 
     - [Bubble Sort](#bubble-sort-algorithm)
