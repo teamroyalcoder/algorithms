@@ -64,7 +64,7 @@ Suppose we are trying to sort the elements in ascending order.
 To demonstrate let's take an unordered array of number with 5 elements
 
 ```cpp
-int array[10] = { 5, 10, 7, 9, 2}
+int array[5] = { 5, 10, 7, 9, 2}
 ```
 
 Let's close look to the elements of the array
