@@ -3,8 +3,9 @@
 ## This repository contains
 
 - [Sorting algorithm](#sorting-algorithm)
-  - [Bubble Sort](#bubble-sort)
-  - [Optimized Bubble Sort](#optimized-bubble-sort)
+  - [Exchange Sort](#exchange-sort) 
+    - [Bubble Sort](#bubble-sort-algorithm)
+    - [Optimized Bubble Sort](#optimized-bubble-sort-algorithm)
 
 ---
 
@@ -18,18 +19,20 @@ Formally, the output of any sorting algorithm must satisfy two conditions:
 
 For optimum efficiency, the input data should be stored in a data structure which allows random access rather than one that allows only sequential access. 
 
-## Let's talk about some sorting algorithm
+**Let's talk about some sorting algorithm**
+
+## Exchange Sort
 
 ---
 
-### Bubble Sort
+### Bubble Sort Algorithm
 
 - Code snippets
   - Integer sort - [&#128279;](shorting_algorithms/bubble_sort.cpp#L20)
   - String sort - [&#128279;](shorting_algorithms/bubble_sort.cpp#L45)
 
 <details>
-<summary>Explore more about Bubble sort</summary>
+<summary>Explore more about Bubble Sort</summary>
 
 <details>
 <summary><b>What is this?</b></summary>
@@ -145,27 +148,6 @@ And when there's no swap required, bubble sorts learns that an array is complete
 <summary>Now we should look into some practical aspects of bubble sort.</summary>
 
 <details>
-<summary><b>Algorithm</b></summary>
-
-We assume list is an array of n elements. We further assume that swap function swaps the values of the given array elements.
-
-```dsa
-begin BubbleSort(list)
-
-   for all elements of list
-      if list[i] > list[i+1]
-         swap(list[i], list[i+1])
-      end if
-   end for
-
-   return list
-
-end BubbleSort
-```
-
-</details>
-
-<details>
 <summary><b>Pseudocode</b></summary>
 
 In pseudocode the algorithm can be expressed as **(0-based array)**:
@@ -205,8 +187,67 @@ end procedure
 
 ---
 
-### Optimized Bubble Sort
+### Optimized Bubble Sort Algorithm
 
 - Code snippets
   - Integer sort - [&#128279;](shorting_algorithms/optimized_bubble_sort.cpp#L20)
   - String sort - [&#128279;](shorting_algorithms/optimized_bubble_sort.cpp#L51)
+
+<details>
+<summary>Explore more about Optimized Bubble Sort</summary>
+
+<details>
+<summary><b>What is this?</b></summary>
+
+Optimized bubble sort is basically a smarter version of bubble sort algorithm. Hence the algorithm is same with a mechanism to determine whether the list/array DS is sorted or not after every iteration. This ensures that the algorithm only runs till the array/list is sorted. Regular bubble sort runs iterations which are equal to the size of the array irrespective of whether the array is sorted before those number of iterations or not. In optimized bubble sort, we have a flag variable that keeps track of whether the list is completely sorted or not. In optimized bubble sort, whenever there is a swapping in any iteration, it means that the array/list is still not sorted & hence the flag is set to FALSE. Whenever there is no swapping in a particular iteration, the flag is set to TRUE. At the end of every iteration, this flag variable is checked. If value is true, it means swapping happened & hence the list isn’t sorted completely so next iteration is allowed. If value is false, it means swapping never happened, hence the list is already sorted & there is no point in further iterations hence exit algorithm.
+
+</details>
+
+<details>
+<summary><b>How Optimized Bubble Sort works?</b></summary>
+
+1. Starting with the first element(index = 0), compare the current element with the next element of the array. Set flag = false
+2. If the current element is greater than the next element of the array, swap them. Set flag = true
+3. If the current element is less than the next element, move to the next element.
+4. At end of iteration check flag, if true, continue iteration else exit iterations.
+5. Repeat Step 1 till the list is sorted.
+
+</details>
+
+<details>
+<summary>Now we should look into some practical aspects of bubble sort.</summary>
+
+<details>
+<summary><b>Pseudocode</b></summary>
+
+```pascal
+procedure bubbleSort(A : list of sortable items)
+    n := length(A)
+    repeat
+        swapped := false
+        for i := 1 to n - 1 inclusive do
+            if A[i - 1] > A[i] then
+                swap(A[i - 1], A[i])
+                swapped := true
+            end if
+        end for
+        n := n - 1
+    until not swapped
+end procedure
+```
+
+</details>
+
+</details>
+
+<details>
+<summary><b>Time and Space</b> complexity for the Bubble Sort algorithm</summary>
+
+- **Worst** Case Time Complexity **[ Big-O ]**: **O(n<sup>2</sup>)**
+- **Best** Case Time Complexity **[Big-omega]**: **O(n)**
+- **Average** Time Complexity **[Big-theta]**: **O(n<sup>2</sup>)**
+- **Space** Complexity: **O(1)**
+
+</details>
+
+</details>
