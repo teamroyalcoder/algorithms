@@ -11,6 +11,9 @@
 
 ## Sorting algorithm
 
+<details>
+<summary>Explore</summary>
+
 In computer science, a sorting algorithm is an algorithm that puts elements of a list into an order. The most frequently used orders are numerical order and lexicographical order, and either ascending or descending. Efficient sorting is important for optimizing the efficiency of other algorithms (such as search and merge algorithms) that require input data to be in sorted lists. Sorting is also often useful for canonicalizing data and for producing human-readable output.
 
 Formally, the output of any sorting algorithm must satisfy two conditions:
@@ -23,7 +26,8 @@ For optimum efficiency, the input data should be stored in a data structure whic
 
 ## Exchange Sort
 
----
+<details>
+<summary>Explore</summary>
 
 ### Bubble Sort Algorithm
 
@@ -46,7 +50,8 @@ Bubble sort, aka sinking sort is a basic algorithm for arranging a string of num
 <details>
 <summary><b>How Bubble Sort Works?</b></summary>
 
-> *In short*
+<details>
+<summary><b>In short</b></summary>
 
 Suppose we are trying to sort the elements in ascending order.
 
@@ -62,7 +67,10 @@ Suppose we are trying to sort the elements in ascending order.
    In each iteration, the comparison takes place up to the last unsorted element.
    The array is sorted when all the unsorted elements are placed at their correct positions.
 
-> *In details*
+</details>
+
+<details>
+<summary><b>In details</b></summary>
 
 To demonstrate let's take an unordered array of number with 5 elements
 
@@ -141,6 +149,8 @@ And when there's no swap required, bubble sorts learns that an array is complete
 |   index   | 0                  | 1                  | 2                  | 3                   | 4                   |
 |:---------:|--------------------|--------------------|--------------------|---------------------|---------------------|
 | **value** | <mark>**2**</mark> | <mark>**5**</mark> | <mark>**7**</mark> | <mark>**10**</mark> | <mark>**11**</mark> |
+
+</details>
 
 </details>
 
@@ -265,6 +275,12 @@ end procedure
 - **Best** Case Time Complexity **[Big-omega]**: **O(n)**
 - **Average** Time Complexity **[Big-theta]**: **O(n<sup>2</sup>)**
 - **Space** Complexity: **O(1)**
+
+</details>
+
+</details>
+
+---
 
 </details>
 
