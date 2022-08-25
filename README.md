@@ -29,8 +29,8 @@ For optimum efficiency, the input data should be stored in a data structure whic
 ### Bubble Sort Algorithm
 
 - Code snippets
-  - Integer sort - [&#128279;](shorting_algorithms/bubble_sort.cpp#L20)
-  - String sort - [&#128279;](shorting_algorithms/bubble_sort.cpp#L38)
+  - Integer sort - [&#128279;](shorting_algorithms/bubble_sort.cc#L20)
+  - String sort - [&#128279;](shorting_algorithms/bubble_sort.cc#L38)
 
 **What is this?**
 
@@ -171,8 +171,8 @@ end procedure
 ### Optimized Bubble Sort Algorithm
 
 - Code snippets
-  - Integer sort - [&#128279;](shorting_algorithms/optimized_bubble_sort.cpp#L20)
-  - String sort - [&#128279;](shorting_algorithms/optimized_bubble_sort.cpp#L44)
+  - Integer sort - [&#128279;](shorting_algorithms/optimized_bubble_sort.cc#L20)
+  - String sort - [&#128279;](shorting_algorithms/optimized_bubble_sort.cc#L44)
 
 **What is this?**
 
@@ -248,8 +248,8 @@ end procedure
 ### Cocktail Shaker Sort Algorithm
 
 - Code snippets
-  - Integer sort - [&#128279;](shorting_algorithms/cocktail_shaker_sort.cpp#L20)
-  - String sort - [&#128279;](shorting_algorithms/cocktail_shaker_sort.cpp#L82)
+  - Integer sort - [&#128279;](shorting_algorithms/cocktail_shaker_sort.cc#L20)
+  - String sort - [&#128279;](shorting_algorithms/cocktail_shaker_sort.cc#L82)
 
 **What is this?**
 
