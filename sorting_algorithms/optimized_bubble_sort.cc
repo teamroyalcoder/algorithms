@@ -6,8 +6,8 @@
 
 using namespace std;
 
-#define ARRAY_SIZE 10 // Size of the array
-#define MAX_CHAR 100  // string characters max length
+#define ARRAY_SIZE 5 // Size of the array
+#define MAX_CHAR 100 // string characters max length
 
 // Arrays [unordered] that we are going to sort using our algorithm (only for predefined)
 int short_array_int[10] = {20, 1, 15, 9, 10, 5, 50, 8, 6, 7};
@@ -87,7 +87,7 @@ int main()
 {
     // Definig some extras
     string algo = "Optimized Bubble Sort"; // Algorithm name
-    string usedArray = "pre";              // Which array should we use. Predefined or User Generated. Default value is "user", can be set to "pre"
+    string usedArray = "user";             // Which array should we use. Predefined or User Generated. Default value is "user", can be set to "pre"
     const size_t array_size = ARRAY_SIZE;  // The size of array. If you use predefined array then take a close look of those array to find out array size (#L13, #L14, #L15, #L16) and define to the top (#L9)
     string array_size_text = "short";      // If you are using predefined array then determine if the array you want to use short or long. Default value is "short", can be set to "long"
     string order = "Ascending";            // Define how you want to order the array Ascending or Descending. Default value is "Ascending", can be set to "Descending"
@@ -140,10 +140,10 @@ int main()
         if (dataType == "integer")
         {
             // First define the array size to exact 10 or 5000 then uncomment on of the if statement below and comment the other if statement
-            if (array_size_text == "short" && array_size == 10)
+            /*if (array_size_text == "short" && array_size == 10)
             {
                 copy(begin(short_array_int), end(short_array_int), begin(integers));
-            }
+            }*/
             /* if (array_size_text == "long" && array_size == 5000)
             {
                 copy(begin(long_array_int), end(long_array_int), begin(integers));
