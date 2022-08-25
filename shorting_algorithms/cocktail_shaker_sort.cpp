@@ -1,4 +1,4 @@
-// Bubble Sort algorithm -> jump to line 20
+// Cocktail Shaker Sort algorithm -> jump to line 20
 #include <iostream>  // Necessary for input output functionality
 #include <algorithm> // Necessary for coping array
 #include <cstring>   // Necessary for coping string array
@@ -17,52 +17,127 @@ char long_array_string[5000][MAX_CHAR] = {"bind", "eggnog", "succeed", "allow", 
 
 // Code starts
 // To short integer
-void bubbleSortInt(int arr[], size_t arrSz, string order = "Ascending")
+void cocktailShakerSortInt(int arr[], size_t arrSz, string order = "Ascending")
 {
-    int rounds = 0; // Calculate how many iteration it take to sort the array -> arr[]
-    int swaps = 0;  // Calculate how many swap needs to sort the array -> arr[]
-    for (size_t i = 0; i < arrSz; i++)
+    bool swapped = true;
+    size_t start = 0;
+    size_t end = arrSz - 1;
+
+    do
     {
-        rounds++;
-        for (size_t j = 0; j < (arrSz - i - 1); j++)
+        // reset the swapped flag on entering
+        // the loop, because it might be true from
+        // a previous iteration.
+        swapped = false;
+
+        // loop from left to right same as
+        // the bubble sort
+        for (size_t i = start; i < end; i++)
         {
-            // Swaping process
-            if ((order == "Descending") ? arr[j] < arr[j + 1] : arr[j] > arr[j + 1])
+            if ((order == "Descending") ? arr[i] < arr[i + 1] : arr[i] > arr[i + 1])
             {
-                swaps++;
-                int temp = arr[j]; // Temporary array
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+                int temp = arr[i]; // Temporary array
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                swapped = true;
             }
         }
-    }
-    cout << "Rounds needed - " << rounds << endl;
-    cout << "Swaps happened - " << swaps << endl;
+
+        // if nothing moved, then array is sorted.
+        if (swapped)
+        {
+            break;
+        }
+
+        // otherwise, reset the swapped flag so that it
+        // can be used in the next stage
+        swapped = false;
+
+        // move the end point back by one, because
+        // item at the end is in its rightful spot
+        end--;
+
+        // from right to left, doing the
+        // same comparison as in the previous stage
+        for (size_t i = end - 1; i >= start; i--)
+        {
+            if ((order == "Descending") ? arr[i] < arr[i + 1] : arr[i] > arr[i + 1])
+            {
+                int temp = arr[i]; // Temporary array
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                swapped = true;
+            }
+        }
+
+        // increase the starting point, because
+        // the last stage would have moved the next
+        // smallest number to its rightful spot.
+        start++;
+
+    } while (swapped);
 }
 
 // To short string
-void bubbleSortString(char arr[][MAX_CHAR], size_t arrSz, string order = "Ascending")
+void cocktailShakerSortString(char arr[][MAX_CHAR], size_t arrSz, string order = "Ascending")
 {
-    int rounds = 0; // Calculate how many iteration it take to sort the array -> arr[]
-    int swaps = 0;  // Calculate how many swap needs to sort the array -> arr[]
-    for (size_t i = 0; i < arrSz; i++)
+    bool swapped = true;
+    size_t start = 0;
+    size_t end = arrSz - 1;
+
+    do
     {
-        rounds++;
-        for (size_t j = 0; j < (arrSz - i - 1); j++)
+        // reset the swapped flag on entering
+        // the loop, because it might be true from
+        // a previous iteration.
+        swapped = false;
+
+        // loop from left to right same as
+        // the bubble sort
+        for (size_t i = start; i < end; i++)
         {
-            // Swaping process
-            if ((order == "Descending") ? strcmp(arr[j], arr[j + 1]) < 0 : strcmp(arr[j], arr[j + 1]) > 0)
+            if ((order == "Descending") ? strcmp(arr[i], arr[i + 1]) < 0 : strcmp(arr[i], arr[i + 1]) > 0)
             {
-                swaps++;
                 char temp[MAX_CHAR]; // Temporary array
-                strcpy(temp, arr[j]);
-                strcpy(arr[j], arr[j + 1]);
-                strcpy(arr[j + 1], temp);
+                strcpy(temp, arr[i]);
+                strcpy(arr[i], arr[i + 1]);
+                strcpy(arr[i + 1], temp);
             }
         }
-    }
-    cout << "Rounds needed - " << rounds << endl;
-    cout << "Swaps happened - " << swaps << endl;
+
+        // if nothing moved, then array is sorted.
+        if (swapped)
+        {
+            break;
+        }
+
+        // otherwise, reset the swapped flag so that it
+        // can be used in the next stage
+        swapped = false;
+
+        // move the end point back by one, because
+        // item at the end is in its rightful spot
+        end--;
+
+        // from right to left, doing the
+        // same comparison as in the previous stage
+        for (size_t i = end - 1; i >= start; i--)
+        {
+            if ((order == "Descending") ? strcmp(arr[i], arr[i + 1]) < 0 : strcmp(arr[i], arr[i + 1]) > 0)
+            {
+                char temp[MAX_CHAR]; // Temporary array
+                strcpy(temp, arr[i]);
+                strcpy(arr[i], arr[i + 1]);
+                strcpy(arr[i + 1], temp);
+            }
+        }
+
+        // increase the starting point, because
+        // the last stage would have moved the next
+        // smallest number to its rightful spot.
+        start++;
+
+    } while (swapped);
 }
 
 // Copy char matrix array
@@ -74,7 +149,7 @@ void copyCharMatrixArray(char (&arrayA)[ARRAY_SIZE][MAX_CHAR], const char (&arra
 int main()
 {
     // Definig some extras
-    string algo = "Bubble Sort";          // Algorithm name
+    string algo = "Cocktail Shaker Sort"; // Algorithm name
     string usedArray = "user";            // Which array should we use. Predefined or User Generated. Default value is "user", can be set to "pre"
     const size_t array_size = ARRAY_SIZE; // The size of array. If you use predefined array then take a close look of those array to find out array size (#L13, #L14, #L15, #L16) and define to the top (#L9)
     string array_size_text = "short";     // If you are using predefined array then determine if the array you want to use short or long. Default value is "short", can be set to "long"
@@ -107,7 +182,7 @@ int main()
         cout << "Enter " << array_size << " " << dataType << ": " << endl;
 
         //  store input from user to array
-        for (size_t i = 0; i < array_size; ++i)
+        for (int i = 0; i < array_size; ++i)
         {
             if (dataType == "integer")
             {
@@ -155,7 +230,7 @@ int main()
 
     // Firstly we print the unordered array
     cout << "Unordered:\n";
-    for (size_t i = 0; i < array_size; i++)
+    for (int i = 0; i < array_size; i++)
     {
         dataType == "integer" ? cout << integers[i] << "\t" : cout << strings[i] << "\t";
     }
@@ -164,13 +239,11 @@ int main()
     cout << endl;
 
     // Secondly we order the array
-    dataType == "integer" ? bubbleSortInt(integers, array_size, order) : bubbleSortString(strings, array_size, order);
-
-    cout << endl;
+    dataType == "integer" ? cocktailShakerSortInt(integers, array_size, order) : cocktailShakerSortString(strings, array_size, order);
 
     // Lastly, we print the ordered array
     cout << "Ordered - (" << order << "):\n";
-    for (size_t i = 0; i < array_size; i++)
+    for (int i = 0; i < array_size; i++)
     {
         dataType == "integer" ? cout << integers[i] << "\t" : cout << strings[i] << "\t";
     }

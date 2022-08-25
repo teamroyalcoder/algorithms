@@ -2,19 +2,15 @@
 
 ## This repository contains
 
-_To take the benefit of bellow link there's no useful way 😜, to reduce the space I had to do this._
-
 - [Sorting algorithm](#sorting-algorithm)
   - [Exchange Sort](#exchange-sort) 
     - [Bubble Sort](#bubble-sort-algorithm)
     - [Optimized Bubble Sort](#optimized-bubble-sort-algorithm)
+    - [Cocktail Shaker Sort](#cocktail-shaker-sort-algorithm)
 
 ---
 
 ## Sorting algorithm
-
-<details>
-<summary>Explore</summary>
 
 In computer science, a sorting algorithm is an algorithm that puts elements of a list into an order. The most frequently used orders are numerical order and lexicographical order, and either ascending or descending. Efficient sorting is important for optimizing the efficiency of other algorithms (such as search and merge algorithms) that require input data to be in sorted lists. Sorting is also often useful for canonicalizing data and for producing human-readable output.
 
@@ -28,8 +24,7 @@ For optimum efficiency, the input data should be stored in a data structure whic
 
 ## Exchange Sort
 
-<details>
-<summary>Explore</summary>
+---
 
 ### Bubble Sort Algorithm
 
@@ -37,23 +32,15 @@ For optimum efficiency, the input data should be stored in a data structure whic
   - Integer sort - [&#128279;](shorting_algorithms/bubble_sort.cpp#L20)
   - String sort - [&#128279;](shorting_algorithms/bubble_sort.cpp#L45)
 
-<details>
-<summary>Explore more about Bubble Sort</summary>
-
-<details>
-<summary><b>What is this?</b></summary>
+**What is this?**
 
 Bubble sort, aka sinking sort is a basic algorithm for arranging a string of numbers or other elements in the correct order. This sorting algorithm is comparison-based algorithm in which each pair of adjacent elements is compared and the elements are swapped if they are not in order. The algorithm then repeats this process until it can run through the entire string or other elements and find no two elements that need to be swapped. This algorithm is not suitable for large data sets as its average and worst case complexity are of Ο(n<sup>2</sub>) where n is the number of items.
 
 **In general**, Just like the movement of air bubbles in the water that rise up to the surface, each element of the array move to the end in each iteration. Therefore, it is called a bubble sort.
 
-</details>
+**How Bubble Sort Works?**
 
-<details>
-<summary><b>How Bubble Sort Works?</b></summary>
-
-<details>
-<summary><b>In short</b></summary>
+**_In short_**
 
 Suppose we are trying to sort the elements in ascending order.
 
@@ -69,10 +56,7 @@ Suppose we are trying to sort the elements in ascending order.
    In each iteration, the comparison takes place up to the last unsorted element.
    The array is sorted when all the unsorted elements are placed at their correct positions.
 
-</details>
-
-<details>
-<summary><b>In details</b></summary>
+**_In details_**
 
 To demonstrate let's take an unordered array of number with 5 elements
 
@@ -152,15 +136,9 @@ And when there's no swap required, bubble sorts learns that an array is complete
 |:---------:|--------------------|--------------------|--------------------|---------------------|---------------------|
 | **value** | <mark>**2**</mark> | <mark>**5**</mark> | <mark>**7**</mark> | <mark>**10**</mark> | <mark>**11**</mark> |
 
-</details>
+Now we should look into some practical aspects of bubble sort.
 
-</details>
-
-<details>
-<summary>Now we should look into some practical aspects of bubble sort.</summary>
-
-<details>
-<summary><b>Pseudocode</b></summary>
+**Pseudocode**
 
 In pseudocode the algorithm can be expressed as **(0-based array)**:
 
@@ -181,21 +159,12 @@ procedure bubbleSort(A : list of sortable items)
 end procedure
 ```
 
-</details>
-
-</details>
-
-<details>
-<summary><b>Time and Space</b> complexity for the Bubble Sort algorithm</summary>
+**Time and Space** complexity for the Bubble Sort algorithm
 
 - **Worst** Case Time Complexity **[ Big-O ]**: **O(n<sup>2</sup>)**
 - **Best** Case Time Complexity **[Big-omega]**: **O(n)**
 - **Average** Time Complexity **[Big-theta]**: **O(n<sup>2</sup>)**
 - **Space** Complexity: **O(1)**
-
-</details>
-
-</details>
 
 ---
 
@@ -203,20 +172,25 @@ end procedure
 
 - Code snippets
   - Integer sort - [&#128279;](shorting_algorithms/optimized_bubble_sort.cpp#L20)
-  - String sort - [&#128279;](shorting_algorithms/optimized_bubble_sort.cpp#L51)
+  - String sort - [&#128279;](shorting_algorithms/optimized_bubble_sort.cpp#L50)
 
-<details>
-<summary>Explore more about Optimized Bubble Sort</summary>
+**What is this?**
 
-<details>
-<summary><b>What is this?</b></summary>
+Optimized bubble sort is basically a smarter version of bubble sort algorithm. Hence the algorithm is same with a mechanism to determine whether the list/array DS is sorted or not after every iteration.
 
-Optimized bubble sort is basically a smarter version of bubble sort algorithm. Hence the algorithm is same with a mechanism to determine whether the list/array DS is sorted or not after every iteration. This ensures that the algorithm only runs till the array/list is sorted. Regular bubble sort runs iterations which are equal to the size of the array irrespective of whether the array is sorted before those number of iterations or not. In optimized bubble sort, we have a flag variable that keeps track of whether the list is completely sorted or not. In optimized bubble sort, whenever there is a swapping in any iteration, it means that the array/list is still not sorted & hence the flag is set to FALSE. Whenever there is no swapping in a particular iteration, the flag is set to TRUE. At the end of every iteration, this flag variable is checked. If value is true, it means swapping happened & hence the list isn’t sorted completely so next iteration is allowed. If value is false, it means swapping never happened, hence the list is already sorted & there is no point in further iterations hence exit algorithm.
+This ensures that the algorithm only runs till the array/list is sorted.
 
-</details>
+Regular bubble sort runs iterations which are equal to the size of the array irrespective of whether the array is sorted before those number of iterations or not.
 
-<details>
-<summary><b>How Optimized Bubble Sort works?</b></summary>
+In optimized bubble sort, we have a flag variable that keeps track of whether the list is completely sorted or not.
+
+In optimized bubble sort, whenever there is a swapping in any iteration, it means that the array/list is still not sorted & hence the flag is set to FALSE.
+
+Whenever there is no swapping in a particular iteration, the flag is set to TRUE.
+
+At the end of every iteration, this flag variable is checked. If value is true, it means swapping happened & hence the list isn’t sorted completely so next iteration is allowed. If value is false, it means swapping never happened, hence the list is already sorted & there is no point in further iterations hence exit algorithm.
+
+**How Optimized Bubble Sort works?**
 
 1. Starting with the first element(index = 0), compare the current element with the next element of the array. Set flag = false
 2. If the current element is greater than the next element of the array, swap them. Set flag = true
@@ -224,13 +198,9 @@ Optimized bubble sort is basically a smarter version of bubble sort algorithm. H
 4. At end of iteration check flag, if true, continue iteration else exit iterations.
 5. Repeat Step 1 till the list is sorted.
 
-</details>
+Now we should look into some practical aspects of optimized bubble sort.
 
-<details>
-<summary>Now we should look into some practical aspects of bubble sort.</summary>
-
-<details>
-<summary><b>Pseudocode</b></summary>
+**Pseudocode**
 
 ```pascal
 procedure bubbleSort(A : list of sortable items)
@@ -266,24 +236,68 @@ procedure bubbleSort(A : list of sortable items)
 end procedure
 ```
 
-</details>
-
-</details>
-
-<details>
-<summary><b>Time and Space</b> complexity for the Bubble Sort algorithm</summary>
+<b>Time and Space</b> complexity for the Optimized Bubble Sort algorithm
 
 - **Worst** Case Time Complexity **[ Big-O ]**: **O(n<sup>2</sup>)**
 - **Best** Case Time Complexity **[Big-omega]**: **O(n)**
 - **Average** Time Complexity **[Big-theta]**: **O(n<sup>2</sup>)**
 - **Space** Complexity: **O(1)**
 
-</details>
-
-</details>
-
 ---
 
-</details>
+### Cocktail Shaker Sort Algorithm
 
-</details>
+- Code snippets
+  - Integer sort - [&#128279;](shorting_algorithms/cocktail_shaker_sort.cpp#L20)
+  - String sort - [&#128279;](shorting_algorithms/cocktail_shaker_sort.cpp#L82)
+
+**What is this?**
+
+Cocktail sort, also known as bidirectional bubble sort, cocktail shaker sort, shaker sort (which can also refer to a variant of selection sort), ripple sort, shuffle sort, or shuttle sort, is a variation of bubble sort that is both a stable sorting algorithm and a comparison sort.
+
+The Bubble sort algorithm always traverses elements from left and moves the largest element to its correct position in the first iteration and second-largest in the second iteration and so on. Cocktail Sort traverses through a given array in both directions alternatively. Cocktail sort does not go through the unnecessary iteration making it efficient for large arrays.
+
+Cocktail sorts break down barriers that limit bubble sorts from being efficient enough on large arrays by not allowing them to go through unnecessary iterations on one specific region (or cluster) before moving onto another section of an array.
+
+**How Cocktail Shaker Sort works?**
+
+1. The first stage loops through the array from left to right, just like the Bubble Sort. During the loop, adjacent items are compared and if the value on the left is greater than the value on the right, then values are swapped. At the end of the first iteration, the largest number will reside at the end of the array.
+2. The second stage loops through the array in opposite direction- starting from the item just before the most recently sorted item, and moving back to the start of the array. Here also, adjacent items are compared and are swapped if required.
+
+Now we should look into some practical aspects of cocktails shaker sort.
+
+**Pseudocode**
+
+```pascal
+procedure cocktailShakerSort(A : list of sortable items) is
+    do
+        swapped := false
+        for each i in 0 to length(A) − 2 do:
+            if A[i] > A[i + 1] then // test whether the two elements are in the wrong order
+                swap(A[i], A[i + 1]) // let the two elements change places
+                swapped := true
+            end if
+        end for
+        if not swapped then
+            // we can exit the outer loop here if no swaps occurred.
+            break do-while loop
+        end if
+        swapped := false
+        for each i in length(A) − 2 to 0 do:
+            if A[i] > A[i + 1] then
+                swap(A[i], A[i + 1])
+                swapped := true
+            end if
+        end for
+    while swapped // if no elements have been swapped, then the list is sorted
+end procedure
+```
+
+**Time and Space** complexity for the Cocktail Shaker Sort algorithm
+
+- **Worst** Case Time Complexity **[ Big-O ]**: **O(n<sup>2</sup>)**
+- **Best** Case Time Complexity **[Big-omega]**: **O(n)**
+- **Average** Time Complexity **[Big-theta]**: **O(n<sup>2</sup>)**
+- **Space** Complexity: **O(1)**
+
+---
