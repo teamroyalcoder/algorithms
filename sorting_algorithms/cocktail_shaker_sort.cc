@@ -32,7 +32,7 @@ void cocktailShakerSortInt(int arr[], size_t arrSz, string order = "Ascending")
 
         // loop from left to right same as
         // the bubble sort
-        for (size_t i = start; i < end; i++)
+        for (size_t i = start; i < end; ++i)
         {
             if ((order == "Descending") ? arr[i] < arr[i + 1] : arr[i] > arr[i + 1])
             {
@@ -55,11 +55,11 @@ void cocktailShakerSortInt(int arr[], size_t arrSz, string order = "Ascending")
 
         // move the end point back by one, because
         // item at the end is in its rightful spot
-        end--;
+        --end;
 
         // from right to left, doing the
         // same comparison as in the previous stage
-        for (size_t i = end - 1; i >= start; i--)
+        for (size_t i = end - 1; i >= start; --i)
         {
             if ((order == "Descending") ? arr[i] < arr[i + 1] : arr[i] > arr[i + 1])
             {
@@ -73,7 +73,7 @@ void cocktailShakerSortInt(int arr[], size_t arrSz, string order = "Ascending")
         // increase the starting point, because
         // the last stage would have moved the next
         // smallest number to its rightful spot.
-        start++;
+        ++start;
 
     } while (swapped);
 }
@@ -94,7 +94,7 @@ void cocktailShakerSortString(char arr[][MAX_CHAR], size_t arrSz, string order =
 
         // loop from left to right same as
         // the bubble sort
-        for (size_t i = start; i < end; i++)
+        for (size_t i = start; i < end; ++i)
         {
             if ((order == "Descending") ? strcmp(arr[i], arr[i + 1]) < 0 : strcmp(arr[i], arr[i + 1]) > 0)
             {
@@ -117,11 +117,11 @@ void cocktailShakerSortString(char arr[][MAX_CHAR], size_t arrSz, string order =
 
         // move the end point back by one, because
         // item at the end is in its rightful spot
-        end--;
+        --end;
 
         // from right to left, doing the
         // same comparison as in the previous stage
-        for (size_t i = end - 1; i >= start; i--)
+        for (size_t i = end - 1; i >= start; --i)
         {
             if ((order == "Descending") ? strcmp(arr[i], arr[i + 1]) < 0 : strcmp(arr[i], arr[i + 1]) > 0)
             {
@@ -135,7 +135,7 @@ void cocktailShakerSortString(char arr[][MAX_CHAR], size_t arrSz, string order =
         // increase the starting point, because
         // the last stage would have moved the next
         // smallest number to its rightful spot.
-        start++;
+        ++start;
 
     } while (swapped);
 }
@@ -230,7 +230,7 @@ int main()
 
     // Firstly we print the unordered array
     cout << "Unordered:\n";
-    for (int i = 0; i < array_size; i++)
+    for (int i = 0; i < array_size; ++i)
     {
         dataType == "integer" ? cout << integers[i] << "\t" : cout << strings[i] << "\t";
     }
@@ -243,7 +243,7 @@ int main()
 
     // Lastly, we print the ordered array
     cout << "Ordered - (" << order << "):\n";
-    for (int i = 0; i < array_size; i++)
+    for (int i = 0; i < array_size; ++i)
     {
         dataType == "integer" ? cout << integers[i] << "\t" : cout << strings[i] << "\t";
     }

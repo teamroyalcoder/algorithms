@@ -19,41 +19,31 @@ char long_array_string[5000][MAX_CHAR] = {"bind", "eggnog", "succeed", "allow", 
 // To short integer
 void bubbleSortInt(int arr[], size_t arrSz, string order = "Ascending")
 {
-    int rounds = 0; // Calculate how many iteration it take to sort the array -> arr[]
-    int swaps = 0;  // Calculate how many swap needs to sort the array -> arr[]
-    for (size_t i = 0; i < arrSz; i++)
+    for (size_t i = 0; i < arrSz; ++i)
     {
-        rounds++;
-        for (size_t j = 0; j < (arrSz - i - 1); j++)
+        for (size_t j = 0; j < (arrSz - i - 1); ++j)
         {
             // Swaping process
             if ((order == "Descending") ? arr[j] < arr[j + 1] : arr[j] > arr[j + 1])
             {
-                swaps++;
                 int temp = arr[j]; // Temporary array
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
             }
         }
     }
-    cout << "Rounds needed - " << rounds << endl;
-    cout << "Swaps happened - " << swaps << endl;
 }
 
 // To short string
 void bubbleSortString(char arr[][MAX_CHAR], size_t arrSz, string order = "Ascending")
 {
-    int rounds = 0; // Calculate how many iteration it take to sort the array -> arr[]
-    int swaps = 0;  // Calculate how many swap needs to sort the array -> arr[]
-    for (size_t i = 0; i < arrSz; i++)
+    for (size_t i = 0; i < arrSz; ++i)
     {
-        rounds++;
-        for (size_t j = 0; j < (arrSz - i - 1); j++)
+        for (size_t j = 0; j < (arrSz - i - 1); ++j)
         {
             // Swaping process
             if ((order == "Descending") ? strcmp(arr[j], arr[j + 1]) < 0 : strcmp(arr[j], arr[j + 1]) > 0)
             {
-                swaps++;
                 char temp[MAX_CHAR]; // Temporary array
                 strcpy(temp, arr[j]);
                 strcpy(arr[j], arr[j + 1]);
@@ -61,8 +51,6 @@ void bubbleSortString(char arr[][MAX_CHAR], size_t arrSz, string order = "Ascend
             }
         }
     }
-    cout << "Rounds needed - " << rounds << endl;
-    cout << "Swaps happened - " << swaps << endl;
 }
 
 // Copy char matrix array
@@ -155,7 +143,7 @@ int main()
 
     // Firstly we print the unordered array
     cout << "Unordered:\n";
-    for (size_t i = 0; i < array_size; i++)
+    for (size_t i = 0; i < array_size; ++i)
     {
         dataType == "integer" ? cout << integers[i] << "\t" : cout << strings[i] << "\t";
     }
@@ -166,11 +154,9 @@ int main()
     // Secondly we order the array
     dataType == "integer" ? bubbleSortInt(integers, array_size, order) : bubbleSortString(strings, array_size, order);
 
-    cout << endl;
-
     // Lastly, we print the ordered array
     cout << "Ordered - (" << order << "):\n";
-    for (size_t i = 0; i < array_size; i++)
+    for (size_t i = 0; i < array_size; ++i)
     {
         dataType == "integer" ? cout << integers[i] << "\t" : cout << strings[i] << "\t";
     }

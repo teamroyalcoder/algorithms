@@ -30,7 +30,7 @@ For optimum efficiency, the input data should be stored in a data structure whic
 
 - Code snippets
   - Integer sort - [&#128279;](shorting_algorithms/bubble_sort.cpp#L20)
-  - String sort - [&#128279;](shorting_algorithms/bubble_sort.cpp#L45)
+  - String sort - [&#128279;](shorting_algorithms/bubble_sort.cpp#L38)
 
 **What is this?**
 
@@ -172,7 +172,7 @@ end procedure
 
 - Code snippets
   - Integer sort - [&#128279;](shorting_algorithms/optimized_bubble_sort.cpp#L20)
-  - String sort - [&#128279;](shorting_algorithms/optimized_bubble_sort.cpp#L50)
+  - String sort - [&#128279;](shorting_algorithms/optimized_bubble_sort.cpp#L44)
 
 **What is this?**
 
