@@ -2,7 +2,7 @@
 #include <iostream>  // Necessary for input output functionality
 #include <algorithm> // Necessary for coping array
 #include <cstring>   // Necessary for coping string array
-#include <string>    // Necessary for string datatype
+#include <string>    // Necessary for string data type
 
 using namespace std;
 
@@ -81,9 +81,9 @@ int main()
     string order = "Ascending";            // Define how you want to order the array Ascending or Descending. Default value is "Ascending", can be set to "Descending"
     int integers[array_size];              // integer array that we will sort
     char strings[array_size][MAX_CHAR];    // string array that we will sort
-    string dataType;                       // Which datatype should we sort.
+    string dataType;                       // Which data type should we sort.
 
-    // Getting the datatype
+    // Getting the data type
     cout << "Choose datatype - [s]tring or [i]nteger" << endl;
     cin >> dataType;
     if (dataType == "s" || dataType == "string")

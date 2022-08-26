@@ -1,8 +1,9 @@
 // Cocktail Shaker Sort algorithm -> jump to line 20
-#include <iostream>  // Necessary for input output functionality
-#include <algorithm> // Necessary for coping array
-#include <cstring>   // Necessary for coping string array
-#include <string>    // Necessary for string datatype
+#include <iostream>      // Necessary for input output functionality
+#include <algorithm>     // Necessary for coping array
+#include <cstring>       // Necessary for coping string array
+#include <string>        // Necessary for string data type
+#include <bits/stdc++.h> // To simplify swapping process
 
 using namespace std;
 
@@ -85,7 +86,7 @@ void cocktailShakerSortString(char arr[][MAX_CHAR], size_t arrSz, string order =
     size_t start = 0;
     size_t end = arrSz - 1;
 
-    do
+    while (swapped)
     {
         // reset the swapped flag on entering
         // the loop, because it might be true from
@@ -136,8 +137,7 @@ void cocktailShakerSortString(char arr[][MAX_CHAR], size_t arrSz, string order =
         // the last stage would have moved the next
         // smallest number to its rightful spot.
         ++start;
-
-    } while (swapped);
+    }
 }
 
 // Copy char matrix array
