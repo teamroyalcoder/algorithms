@@ -1,8 +1,9 @@
-// Optimized Bubble Sort algorithm -> jump to line 20
-#include <iostream>  // Necessary for input output functionality
-#include <algorithm> // Necessary for coping array
-#include <cstring>   // Necessary for coping string array
-#include <string>    // Necessary for string data type
+// Optimized Bubble Sort algorithm -> jump to line 21
+#include <iostream>  	 // Necessary for input output functionality
+#include <algorithm> 	 // Necessary for coping array
+#include <cstring>   	 // Necessary for coping string array
+#include <string>    	 // Necessary for string data type
+#include <bits/stdc++.h> // To simplify swapping process
 
 using namespace std;
 
@@ -17,20 +18,18 @@ char long_array_string[5000][MAX_CHAR] = {"bind", "eggnog", "succeed", "allow", 
 
 // Code starts
 // To short integer
-void optimizedBubbleSortInt(int arr[], size_t arrSz, string order = "Ascending")
+void optimizedBubbleSortInt(int arr[], int arrSz, string order = "ascending")
 {
-    for (size_t i = 0; i < arrSz; ++i)
+    for (int i = 0; i < arrSz; ++i)
     {
         bool flag = false;
-        for (size_t j = 0; j < (arrSz - i - 1); ++j)
+        for (int j = 0; j < (arrSz - i - 1); ++j)
         {
-            // Swaping process
-            if ((order == "Descending") ? arr[j] < arr[j + 1] : arr[j] > arr[j + 1])
+            // Swapping process
+            if ((order == "descending") ? arr[j] < arr[j + 1] : arr[j] > arr[j + 1])
             {
                 flag = true;
-                int temp = arr[j]; // Temporary array
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+                swap(arr[j], arr[j + 1]);
             }
         }
         if (!flag)
@@ -41,21 +40,18 @@ void optimizedBubbleSortInt(int arr[], size_t arrSz, string order = "Ascending")
 }
 
 // To short string
-void optimizedBubbleSortString(char arr[][MAX_CHAR], size_t arrSz, string order = "Ascending")
+void optimizedBubbleSortString(char arr[][MAX_CHAR], int arrSz, string order = "ascending")
 {
-    for (size_t i = 0; i < arrSz; ++i)
+    for (int i = 0; i < arrSz; ++i)
     {
         bool flag = false;
-        for (size_t j = 0; j < (arrSz - i - 1); ++j)
+        for (int j = 0; j < (arrSz - i - 1); ++j)
         {
-            // Swaping process
-            if ((order == "Descending") ? strcmp(arr[j], arr[j + 1]) < 0 : strcmp(arr[j], arr[j + 1]) > 0)
+            // Swapping process
+            if ((order == "descending") ? strcmp(arr[j], arr[j + 1]) < 0 : strcmp(arr[j], arr[j + 1]) > 0)
             {
                 flag = true;
-                char temp[MAX_CHAR]; // Temporary array
-                strcpy(temp, arr[j]);
-                strcpy(arr[j], arr[j + 1]);
-                strcpy(arr[j + 1], temp);
+                swap(arr[j], arr[j + 1]);
             }
         }
         if (!flag)
@@ -73,19 +69,20 @@ void copyChar(char (&arrayA)[ARRAY_SIZE][MAX_CHAR], const char (&arrayB)[ARRAY_S
 
 int main()
 {
-    // Definig some extras
+    // Defining some extras
     string algo = "Optimized Bubble Sort"; // Algorithm name
     string usedArray = "user";             // Which array should we use. Predefined or User Generated. Default value is "user", can be set to "pre"
-    const size_t array_size = ARRAY_SIZE;  // The size of array. If you use predefined array then take a close look of those array to find out array size (#L13, #L14, #L15, #L16) and define to the top (#L9)
-    string array_size_text = "short";      // If you are using predefined array then determine if the array you want to use short or long. Default value is "short", can be set to "long"
-    string order = "Ascending";            // Define how you want to order the array Ascending or Descending. Default value is "Ascending", can be set to "Descending"
+    const int array_size = ARRAY_SIZE;  // The size of array. If you use predefined array then take a close look of those array to find out array size (#L14, #L15, #L16, #L17) and define to the top (#L10)
+    string array_intext = "short";      // If you are using predefined array then determine if the array you want to use short or long. Default value is "short", can be set to "long"
     int integers[array_size];              // integer array that we will sort
     char strings[array_size][MAX_CHAR];    // string array that we will sort
     string dataType;                       // Which data type should we sort.
+    string order;            			   // Define how you want to order the array Ascending or Descending.
 
     // Getting the data type
-    cout << "Choose datatype - [s]tring or [i]nteger" << endl;
+    cout << "Choose data-type - [S]tring or [I]nteger" << endl;
     cin >> dataType;
+    transform(dataType.begin(), dataType.end(), dataType.begin(), ::tolower);
     if (dataType == "s" || dataType == "string")
     {
         dataType = "string";
@@ -96,7 +93,25 @@ int main()
     }
     else
     {
-        cerr << "Choose valid datatype." << endl;
+        cerr << "Choose valid data-type." << endl;
+        return 0;
+    }
+
+    // Getting the Order
+    cout << "Choose order - [A]scending or [D]escending" << endl;
+    cin >> order;
+    transform(order.begin(), order.end(), order.begin(), ::tolower);
+    if (order == "a" || order == "ascending")
+    {
+        order = "ascending";
+    }
+    else if (order == "d" || order == "descending")
+    {
+        order = "descending";
+    }
+    else
+    {
+        cerr << "Choose valid order." << endl;
         return 0;
     }
 
@@ -107,7 +122,7 @@ int main()
         cout << "Enter " << array_size << " " << dataType << ": " << endl;
 
         //  store input from user to array
-        for (size_t i = 0; i < array_size; i++)
+        for (int i = 0; i < array_size; ++i)
         {
             if (dataType == "integer")
             {
@@ -128,11 +143,11 @@ int main()
         if (dataType == "integer")
         {
             // First define the array size to exact 10 or 5000 then uncomment on of the if statement below and comment the other if statement
-            /*if (array_size_text == "short" && array_size == 10)
+            /*if (array_intext == "short" && array_size == 10)
             {
                 copy(begin(short_array_int), end(short_array_int), begin(integers));
             }*/
-            /* if (array_size_text == "long" && array_size == 5000)
+            /* if (array_intext == "long" && array_size == 5000)
             {
                 copy(begin(long_array_int), end(long_array_int), begin(integers));
             } */
@@ -140,11 +155,11 @@ int main()
         else
         {
             // First define the array size to exact 10 or 5000 then uncomment on of the if statement below and comment the other if statement
-            /* if (array_size_text == "short" && array_size == 10)
+            /* if (array_intext == "short" && array_size == 10)
             {
                 copyChar(strings, short_array_string);
             } */
-            /* if (array_size_text == "long" && array_size == 5000)
+            /* if (array_intext == "long" && array_size == 5000)
             {
                 copyChar(strings, long_array_string);
             } */
@@ -155,7 +170,7 @@ int main()
 
     // Firstly we print the unordered array
     cout << "Unordered:\n";
-    for (size_t i = 0; i < array_size; ++i)
+    for (int i = 0; i < array_size; ++i)
     {
         dataType == "integer" ? cout << integers[i] << "\t" : cout << strings[i] << "\t";
     }
@@ -170,7 +185,7 @@ int main()
 
     // Lastly, we print the ordered array
     cout << "Ordered - (" << order << "):\n";
-    for (size_t i = 0; i < array_size; ++i)
+    for (int i = 0; i < array_size; ++i)
     {
         dataType == "integer" ? cout << integers[i] << "\t" : cout << strings[i] << "\t";
     }

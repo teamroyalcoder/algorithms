@@ -1,4 +1,4 @@
-// Cocktail Shaker Sort algorithm -> jump to line 20
+// Cocktail Shaker Sort algorithm -> jump to line 21
 #include <iostream>      // Necessary for input output functionality
 #include <algorithm>     // Necessary for coping array
 #include <cstring>       // Necessary for coping string array
@@ -18,73 +18,11 @@ char long_array_string[5000][MAX_CHAR] = {"bind", "eggnog", "succeed", "allow", 
 
 // Code starts
 // To short integer
-void cocktailShakerSortInt(int arr[], size_t arrSz, string order = "Ascending")
+void cocktailShakerSortInt(int arr[], int arrSz, string order = "ascending")
 {
     bool swapped = true;
-    size_t start = 0;
-    size_t end = arrSz - 1;
-
-    do
-    {
-        // reset the swapped flag on entering
-        // the loop, because it might be true from
-        // a previous iteration.
-        swapped = false;
-
-        // loop from left to right same as
-        // the bubble sort
-        for (size_t i = start; i < end; ++i)
-        {
-            if ((order == "Descending") ? arr[i] < arr[i + 1] : arr[i] > arr[i + 1])
-            {
-                int temp = arr[i]; // Temporary array
-                arr[i] = arr[i + 1];
-                arr[i + 1] = temp;
-                swapped = true;
-            }
-        }
-
-        // if nothing moved, then array is sorted.
-        if (swapped)
-        {
-            break;
-        }
-
-        // otherwise, reset the swapped flag so that it
-        // can be used in the next stage
-        swapped = false;
-
-        // move the end point back by one, because
-        // item at the end is in its rightful spot
-        --end;
-
-        // from right to left, doing the
-        // same comparison as in the previous stage
-        for (size_t i = end - 1; i >= start; --i)
-        {
-            if ((order == "Descending") ? arr[i] < arr[i + 1] : arr[i] > arr[i + 1])
-            {
-                int temp = arr[i]; // Temporary array
-                arr[i] = arr[i + 1];
-                arr[i + 1] = temp;
-                swapped = true;
-            }
-        }
-
-        // increase the starting point, because
-        // the last stage would have moved the next
-        // smallest number to its rightful spot.
-        ++start;
-
-    } while (swapped);
-}
-
-// To short string
-void cocktailShakerSortString(char arr[][MAX_CHAR], size_t arrSz, string order = "Ascending")
-{
-    bool swapped = true;
-    size_t start = 0;
-    size_t end = arrSz - 1;
+    int arrStart = 0;
+    int arrEnd = arrSz - 1;
 
     while (swapped)
     {
@@ -95,19 +33,73 @@ void cocktailShakerSortString(char arr[][MAX_CHAR], size_t arrSz, string order =
 
         // loop from left to right same as
         // the bubble sort
-        for (size_t i = start; i < end; ++i)
+        for (int i = arrStart; i < arrEnd; ++i)
         {
-            if ((order == "Descending") ? strcmp(arr[i], arr[i + 1]) < 0 : strcmp(arr[i], arr[i + 1]) > 0)
+            if ((order == "descending") ? arr[i] < arr[i + 1] : arr[i] > arr[i + 1])
             {
-                char temp[MAX_CHAR]; // Temporary array
-                strcpy(temp, arr[i]);
-                strcpy(arr[i], arr[i + 1]);
-                strcpy(arr[i + 1], temp);
+                swap(arr[i], arr[i + 1]);
+                swapped = true;
             }
         }
 
         // if nothing moved, then array is sorted.
-        if (swapped)
+        if (!swapped)
+            break;
+
+        // otherwise, reset the swapped flag so that it
+        // can be used in the next stage
+        swapped = false;
+
+        // move the end point back by one, because
+        // item at the end is in its rightful spot
+        --arrEnd;
+
+        // from right to left, doing the
+        // same comparison as in the previous stage
+        for (int i = ( arrEnd - 1 ); i >= arrStart; --i)
+        {
+            if ((order == "descending") ? arr[i] < arr[i + 1] : arr[i] > arr[i + 1])
+            {
+                swap(arr[i], arr[i + 1]);
+                swapped = true;
+            }
+        }
+
+        // increase the starting point, because
+        // the last stage would have moved the next
+        // smallest number to its rightful spot.
+        ++arrStart;
+
+    };
+}
+
+// To short string
+void cocktailShakerSortString(char arr[][MAX_CHAR], int arrSz, string order = "ascending")
+{
+    bool swapped = true;
+    int arrStart = 0;
+    int arrEnd = arrSz - 1;
+
+    while (swapped)
+    {
+        // reset the swapped flag on entering
+        // the loop, because it might be true from
+        // a previous iteration.
+        swapped = false;
+
+        // loop from left to right same as
+        // the bubble sort
+        for (int i = arrStart; i < arrEnd; ++i)
+        {
+            if ((order == "descending") ? strcmp(arr[i], arr[i + 1]) < 0 : strcmp(arr[i], arr[i + 1]) > 0)
+            {
+                swap(arr[i], arr[i + 1]);
+                swapped = true;
+            }
+        }
+
+        // if nothing moved, then array is sorted.
+        if (!swapped)
         {
             break;
         }
@@ -118,49 +110,48 @@ void cocktailShakerSortString(char arr[][MAX_CHAR], size_t arrSz, string order =
 
         // move the end point back by one, because
         // item at the end is in its rightful spot
-        --end;
+        --arrEnd;
 
         // from right to left, doing the
         // same comparison as in the previous stage
-        for (size_t i = end - 1; i >= start; --i)
+        for (int i = arrEnd - 1; i >= arrStart; --i)
         {
-            if ((order == "Descending") ? strcmp(arr[i], arr[i + 1]) < 0 : strcmp(arr[i], arr[i + 1]) > 0)
+            if ((order == "descending") ? strcmp(arr[i], arr[i + 1]) < 0 : strcmp(arr[i], arr[i + 1]) > 0)
             {
-                char temp[MAX_CHAR]; // Temporary array
-                strcpy(temp, arr[i]);
-                strcpy(arr[i], arr[i + 1]);
-                strcpy(arr[i + 1], temp);
+                swap(arr[i], arr[i + 1]);
+                swapped = true;
             }
         }
 
         // increase the starting point, because
         // the last stage would have moved the next
         // smallest number to its rightful spot.
-        ++start;
-    }
+        ++arrStart;
+    };
 }
 
 // Copy char matrix array
-void copyCharMatrixArray(char (&arrayA)[ARRAY_SIZE][MAX_CHAR], const char (&arrayB)[ARRAY_SIZE][MAX_CHAR])
+void copyChar(char (&arrayA)[ARRAY_SIZE][MAX_CHAR], const char (&arrayB)[ARRAY_SIZE][MAX_CHAR])
 {
     memcpy(arrayA, arrayB, sizeof(arrayB));
 }
 
 int main()
 {
-    // Definig some extras
-    string algo = "Cocktail Shaker Sort"; // Algorithm name
-    string usedArray = "user";            // Which array should we use. Predefined or User Generated. Default value is "user", can be set to "pre"
-    const size_t array_size = ARRAY_SIZE; // The size of array. If you use predefined array then take a close look of those array to find out array size (#L13, #L14, #L15, #L16) and define to the top (#L9)
-    string array_size_text = "short";     // If you are using predefined array then determine if the array you want to use short or long. Default value is "short", can be set to "long"
-    string order = "Ascending";           // Define how you want to order the array Ascending or Descending. Default value is "Ascending", can be set to "Descending"
-    int integers[array_size];             // integer array that we will sort
-    char strings[array_size][MAX_CHAR];   // string array that we will sort
-    string dataType;                      // Which datatype should we sort.
+    // Defining some extras
+    string algo = "Cocktail Shaker Sort";  // Algorithm name
+    string usedArray = "user";             // Which array should we use. Predefined or User Generated. Default value is "user", can be set to "pre"
+    const int array_size = ARRAY_SIZE;  // The size of array. If you use predefined array then take a close look of those array to find out array size (#L14, #L15, #L16, #L17) and define to the top (#L10)
+    string array_intext = "short";      // If you are using predefined array then determine if the array you want to use short or long. Default value is "short", can be set to "long"
+    int integers[array_size];              // integer array that we will sort
+    char strings[array_size][MAX_CHAR];    // string array that we will sort
+    string dataType;                       // Which data type should we sort.
+    string order;            			   // Define how you want to order the array Ascending or Descending.
 
-    // Getting the datatype
-    cout << "Choose datatype - [s]tring or [i]nteger" << endl;
+    // Getting the data type
+    cout << "Choose data-type - [S]tring or [I]nteger" << endl;
     cin >> dataType;
+    transform(dataType.begin(), dataType.end(), dataType.begin(), ::tolower);
     if (dataType == "s" || dataType == "string")
     {
         dataType = "string";
@@ -171,7 +162,25 @@ int main()
     }
     else
     {
-        cerr << "Choose valid datatype." << endl;
+        cerr << "Choose valid data-type." << endl;
+        return 0;
+    }
+
+    // Getting the Order
+    cout << "Choose order - [A]scending or [D]escending" << endl;
+    cin >> order;
+    transform(order.begin(), order.end(), order.begin(), ::tolower);
+    if (order == "a" || order == "ascending")
+    {
+        order = "ascending";
+    }
+    else if (order == "d" || order == "descending")
+    {
+        order = "descending";
+    }
+    else
+    {
+        cerr << "Choose valid order." << endl;
         return 0;
     }
 
@@ -203,11 +212,11 @@ int main()
         if (dataType == "integer")
         {
             // First define the array size to exact 10 or 5000 then uncomment on of the if statement below and comment the other if statement
-            /* if (array_size_text == "short" && array_size == 10)
+            /* if (array_intext == "short" && array_size == 10)
             {
                 copy(begin(short_array_int), end(short_array_int), begin(integers));
             } */
-            /* if (array_size_text == "long" && array_size == 5000)
+            /* if (array_intext == "long" && array_size == 5000)
             {
                 copy(begin(long_array_int), end(long_array_int), begin(integers));
             } */
@@ -215,13 +224,13 @@ int main()
         else
         {
             // First define the array size to exact 10 or 5000 then uncomment on of the if statement below and comment the other if statement
-            /* if (array_size_text == "short" && array_size == 10)
+            /* if (array_intext == "short" && array_size == 10)
             {
-                copyCharMatrixArray(strings, short_array_string);
+                copyChar(strings, short_array_string);
             } */
-            /* if (array_size_text == "long" && array_size == 5000)
+            /* if (array_intext == "long" && array_size == 5000)
             {
-                copyCharMatrixArray(strings, long_array_string);
+                copyChar(strings, long_array_string);
             } */
         }
     }

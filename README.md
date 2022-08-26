@@ -4,9 +4,9 @@
 
 - [Sorting algorithm](#sorting-algorithm)
   - [Exchange Sort](#exchange-sort) 
-    - [Bubble Sort](#bubble-sort-algorithm)
-    - [Optimized Bubble Sort](#optimized-bubble-sort-algorithm)
-    - [Cocktail Shaker Sort](#cocktail-shaker-sort-algorithm)
+    - [Bubble Sort](#bubble-sort-algorithm) -> [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/bubble_sort.cc)
+    - [Optimized Bubble Sort](#optimized-bubble-sort-algorithm) -> [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/optimized_bubble_sort.cc)
+    - [Cocktail Shaker Sort](#cocktail-shaker-sort-algorithm) -> [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/cocktail_shaker_sort.cc)
 
 ---
 
@@ -29,8 +29,8 @@ For optimum efficiency, the input data should be stored in a data structure whic
 ### Bubble Sort Algorithm
 
 - Code snippets
-  - Integer sort - [&#128279;](sorting_algorithms/bubble_sort.cc#L20)
-  - String sort - [&#128279;](sorting_algorithms/bubble_sort.cc#L38)
+  - Integer sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/bubble_sort.cc#L21)
+  - String sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/bubble_sort.cc#L37)
 
 **What is this?**
 
@@ -171,8 +171,8 @@ end procedure
 ### Optimized Bubble Sort Algorithm
 
 - Code snippets
-  - Integer sort - [&#128279;](sorting_algorithms/optimized_bubble_sort.cc#L20)
-  - String sort - [&#128279;](sorting_algorithms/optimized_bubble_sort.cc#L44)
+  - Integer sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/optimized_bubble_sort.cc#L21)
+  - String sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/optimized_bubble_sort.cc#L43)
 
 **What is this?**
 
@@ -248,8 +248,8 @@ end procedure
 ### Cocktail Shaker Sort Algorithm
 
 - Code snippets
-  - Integer sort - [&#128279;](sorting_algorithms/cocktail_shaker_sort.cc#L20)
-  - String sort - [&#128279;](sorting_algorithms/cocktail_shaker_sort.cc#L82)
+  - Integer sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/cocktail_shaker_sort.cc#L21)
+  - String sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/cocktail_shaker_sort.cc#L77)
 
 **What is this?**
 
