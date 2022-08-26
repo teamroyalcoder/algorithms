@@ -29,8 +29,8 @@ For optimum efficiency, the input data should be stored in a data structure whic
 ### Bubble Sort Algorithm
 
 - Code snippets
-  - Integer sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/bubble_sort.cc#L21)
-  - String sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/bubble_sort.cc#L37)
+  - Integer sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/bubble_sort.cc#L29)
+  - String sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/bubble_sort.cc#L54)
 
 **What is this?**
 
@@ -171,8 +171,8 @@ end procedure
 ### Optimized Bubble Sort Algorithm
 
 - Code snippets
-  - Integer sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/optimized_bubble_sort.cc#L21)
-  - String sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/optimized_bubble_sort.cc#L43)
+  - Integer sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/optimized_bubble_sort.cc#L29)
+  - String sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/optimized_bubble_sort.cc#L60)
 
 **What is this?**
 
@@ -248,8 +248,8 @@ end procedure
 ### Cocktail Shaker Sort Algorithm
 
 - Code snippets
-  - Integer sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/cocktail_shaker_sort.cc#L21)
-  - String sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/cocktail_shaker_sort.cc#L77)
+  - Integer sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/cocktail_shaker_sort.cc#L29)
+  - String sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/cocktail_shaker_sort.cc#L94)
 
 **What is this?**
 
@@ -291,6 +291,61 @@ procedure cocktailShakerSort(A : list of sortable items) is
         end for
     while swapped // if no elements have been swapped, then the list is sorted
 end procedure
+```
+
+**Time and Space** complexity for the Cocktail Shaker Sort algorithm
+
+- **Worst** Case Time Complexity **[ Big-O ]**: **O(n<sup>2</sup>)**
+- **Best** Case Time Complexity **[Big-omega]**: **O(n)**
+- **Average** Time Complexity **[Big-theta]**: **O(n<sup>2</sup>)**
+- **Space** Complexity: **O(1)**
+
+---
+
+### Odd Even Sort Algorithm
+
+- Code snippets
+  - Integer sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/odd_even_sort.cc#L29)
+  - String sort - [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/odd_even_sort.cc#L68)
+
+**What is it?**
+
+This is basically a variation of bubble-sort. This algorithm is divided into two phases- Odd and Even Phase. The algorithm runs until the array elements are sorted and in each iteration two phases occurs- Odd and Even Phases.
+In the odd phase, we perform a bubble sort on odd indexed elements and in the even phase, we perform a bubble sort on even indexed elements.
+
+**How Odd Even Sort works?**
+
+1. It compares two adjacent numbers and switches them, if the first number is greater than the second number to get an ascending order list.
+2. The opposite case applies for a descending order series.
+3. Odd-Even transposition sort operates in two phases − odd phase and even phase.
+4. In both the phases, processes exchange numbers with their adjacent number in the right.
+
+Now we should look into some practical aspects of cocktails shaker sort.
+
+**Pseudocode**
+
+```pascal
+procedure ODD-EVEN_PAR (n) 
+
+begin 
+   id := process's label 
+	
+   for i := 1 to n do 
+   begin 
+	
+      if i is odd and id is odd then 
+         compare-exchange_min(id + 1); 
+      else 
+         compare-exchange_max(id - 1);
+			
+      if i is even and id is even then 
+         compare-exchange_min(id + 1); 
+      else 
+         compare-exchange_max(id - 1);
+			
+   end for
+	
+end ODD-EVEN_PAR
 ```
 
 **Time and Space** complexity for the Cocktail Shaker Sort algorithm
