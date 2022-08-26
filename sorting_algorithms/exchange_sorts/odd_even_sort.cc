@@ -34,7 +34,7 @@ void oddEvenSortInt(int arr[], int arrSz, string order = "ascending")
         flag = true;
 
         // Perform Bubble sort on odd indexed element
-        for (int i=1; i<=n-2; i=i+2)
+        for (int i = 1; i <= arrSz - 2; i = i + 2)
         {
             if ((order == "descending") ? arr[i] < arr[i + 1] : arr[i] > arr[i + 1])
             {
@@ -44,7 +44,7 @@ void oddEvenSortInt(int arr[], int arrSz, string order = "ascending")
         }
 
         // Perform Bubble sort on even indexed element
-        for (int i=0; i<=n-2; i=i+2)
+        for (int i = 0; i <= arrSz - 2; i = i + 2)
         {
             if ((order == "descending") ? arr[i] < arr[i + 1] : arr[i] > arr[i + 1])
             {
@@ -73,7 +73,7 @@ void oddEvenSortString(char arr[][MAX_CHAR], int arrSz, string order = "ascendin
         flag = true;
 
         // Perform Bubble sort on odd indexed element
-        for (int i=1; i<=n-2; i=i+2)
+        for (int i = 0; i <= arrSz - 2; i = i + 2)
         {
             if ((order == "descending") ? strcmp(arr[i], arr[i + 1]) < 0 : strcmp(arr[i], arr[i + 1]) > 0)
             {
@@ -83,7 +83,7 @@ void oddEvenSortString(char arr[][MAX_CHAR], int arrSz, string order = "ascendin
         }
 
         // Perform Bubble sort on even indexed element
-        for (int i=0; i<=n-2; i=i+2)
+        for (int i = 0; i <= arrSz - 2; i = i + 2)
         {
             if ((order == "descending") ? strcmp(arr[i], arr[i + 1]) < 0 : strcmp(arr[i], arr[i + 1]) > 0)
             {
