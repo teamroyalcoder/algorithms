@@ -7,6 +7,7 @@
     - [Bubble Sort](#bubble-sort-algorithm) -> [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/bubble_sort.cc)
     - [Optimized Bubble Sort](#optimized-bubble-sort-algorithm) -> [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/optimized_bubble_sort.cc)
     - [Cocktail Shaker Sort](#cocktail-shaker-sort-algorithm) -> [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/cocktail_shaker_sort.cc)
+    - [Odd Even Sort](#odd-even-sort-algorithm) -> [:page_facing_up: :link:](sorting_algorithms/exchange_sorts/odd_even_sort.cc)
 
 ---
 
